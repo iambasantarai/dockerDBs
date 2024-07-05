@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  cache:
+    image: redis:6.2-alpine
+    container_name: redis
+    ports:
+      - '6379:6379'
+    environment:
+      - REDIS_PASSWORD=root
+    command: ["redis-server", "--requirepass", "root"]
+    volumes: 
+      - cache:/storage
+volumes:
+  cache:
+    driver: local

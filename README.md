@@ -23,3 +23,17 @@ docker exec -it pgdb bash
 su postgres
 psql
 ```
+
+### redis
+
+Run the following command to start the Redis container:
+
+```bash
+docker-compose -f redis.yml up -d
+```
+
+Connect to redis using `redis-cli`
+
+```bash
+redis-cli -h localhost -p 6379 -a root
+```
